@@ -82,7 +82,7 @@ const FutureChallenges: React.FC = () => {
               <AlertTriangle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-white">Current Challenges</h2>
+              <h2 className="text-2xl font-bold text-white">Anticipated Blockers</h2>
             </div>
           </div>
         </div>
