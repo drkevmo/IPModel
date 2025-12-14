@@ -170,7 +170,7 @@ export const timelineSteps: TimelineStepData[] = [
   },
   {
     stepNumber: 18,
-    title: 'Text Updated Without Numerical Inputs',
+    title: 'Text Updated Without Numbers',
     description: 'Colleague made multiple changes to the text but did not add any numbers.',
     icon: XCircle,
   },
@@ -183,7 +183,7 @@ export const timelineSteps: TimelineStepData[] = [
   },
   {
     stepNumber: 20,
-    title: 'Numerical Inputs Not Added Within Expected Timeframe',
+    title: 'Numbers Not Added Within Expected Timeframe',
     description: 'Colleague did not add any numbers within agreed timeframe so progressed with revenue projections based on historical case.',
     icon: Clock,
   },
@@ -197,8 +197,8 @@ export const timelineSteps: TimelineStepData[] = [
   },
   {
     stepNumber: 22,
-    title: 'Internal Reviewer Raised Early Concerns Prior to Full Review',
-    description: 'Raised concerns at an early stage relating to costing approaches, prior to full review of the document. "I should make you aware that all costings go outside of FBAM including business case need to be reviewed/approved by me. FBAM doesn\'t have a costing model so I am not sure what you have been using." The requirement from RIO was about potential revenue not costings and no costing model was used.',
+    title: 'Internal Reviewer Raised Concerns Prior to Reviewing',
+    description: 'Concerns relating to costing approaches, prior to seeing the document. "I should make you aware that all costings go outside of FBAM including business case need to be reviewed/approved by me. FBAM doesn\'t have a costing model so I am not sure what you have been using." The requirement from RIO was about potential revenue not costings and no costing model was used.',
     icon: OctagonX,
   },
 
