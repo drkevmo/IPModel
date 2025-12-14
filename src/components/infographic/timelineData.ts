@@ -73,7 +73,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 3,
     title: 'Completion & Submission of Invention Disclosure Form',
     description: 'Comprehensive invention disclosure document completed and submitted. Requires interpreting IP ownership, contracts, confidentiality, export control, and software licensing without legal training. Key sections: Invention Summary, Novelty, Benefits, Prior Art, Barriers, Inventorship, Schedule 1 Technical Description.',
-    wordCount: '5,500–7,000 words',
+    wordCount: '8,000 words',
     icon: ClipboardCheck,
   },
   {
