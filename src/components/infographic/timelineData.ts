@@ -87,7 +87,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 5,
     title: 'Completion and Submission of Due-Diligence Checklist',
     description: 'Due-diligence checklist completed and submitted, addressing IP type classification, ownership verification, and compliance requirements.',
-    wordCount: '3–4 pages',
+    wordCount: '3 pages',
     icon: FileCheck,
   },
   {
@@ -107,7 +107,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 8,
     title: 'Completion and Submission of Know-How Summary',
     description: 'Know-How Summary document completed and submitted, detailing the conceptual architecture and technical framework of the methodology. Key sections: Conceptual Layer, Generative Layer, Synthetic-AI Layer, Boundaries, Governance.',
-    wordCount: '1,500–2,500 words',
+    wordCount: '1,500 words',
     icon: BookCheck,
   },
   {
@@ -121,7 +121,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 10,
     title: 'Completion and Submission of Operational Trade-Secret Layer',
     description: 'Operational Trade-Secret Layer document completed and submitted, capturing proprietary methodologies and decision architectures. Key sections: Decision Architecture, Scoring Logic, Narrative Engine, Design Cycle, Pedagogical Integration, Turning-Point Structures.',
-    wordCount: '3,000–5,000 words',
+    wordCount: '2,000 words',
     icon: ShieldCheck,
   },
   {
@@ -140,7 +140,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 13,
     title: 'Completion and Submission of first business case to RIO',
     description: 'This was done before receiving internal feedback because RIO chased and since no template was available it wasn\'t clear if this draft would be sufficient.',
-    wordCount: '2,000–3,000 words',
+    wordCount: '2,500 words',
     icon: CheckSquare,
   },
   {
@@ -192,7 +192,7 @@ export const timelineSteps: TimelineStepData[] = [
     stepNumber: 21,
     title: 'Draft of More Detailed Business Case with 5-Year Revenue Projections',
     description: 'Comprehensive business case document with detailed financial projections including multiple revenue streams. Key sections: Strategic Rationale, Value Proposition, Commercial Model, 5-Year Revenue Projections, Medium Programmes, Large Multi-Cohort Bids, Recruitment Uplift, Licensing Income.',
-    wordCount: '5,000–7,000 words + tables',
+    wordCount: '4,000 words + tables',
     icon: TrendingUp,
   },
   {
