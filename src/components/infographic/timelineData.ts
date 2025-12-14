@@ -212,21 +212,21 @@ export const timelineSteps: TimelineStepData[] = [
 
   {
     stepNumber: 24,
-    title: 'Prepare Sixth Version of Business Case',
+    title: 'Prepare sixth Version of Business Case',
     description: 'Business case needs to be revised again to address latest feedback and requirements.',
     icon: RotateCcw,
   },
 
   {
     stepNumber: 25,
-    title: 'Revised Document to be Reviewed Internally by RIO',
-    description: 'Updated business case submitted for internal review by the Research and Innovation Office.',
+    title: 'Revised Document to be Reviewed Internally and then reviewed by RIO',
+    description: 'Updated business case to be submitted for internal review and then reviewed by the Research and Innovation Office.',
     icon: Search,
   },
 
   {
     stepNumber: 26,
-    title: '26+ - Unclear',
+    title: '26+ Unclear',
     description: 'Future steps in the process remain to be determined.',
     icon: CircleDashed,
   },
