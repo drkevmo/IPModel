@@ -1,18 +1,14 @@
 import React from 'react';
 import TimelineStep from './TimelineStep';
-import PhaseHeader from './PhaseHeader';
-import { timelineSteps, phases, PHASE_COLORS } from './timelineData';
-import { Lightbulb, PoundSterling } from 'lucide-react';
+import { timelineSteps, STEP_COLOR } from './timelineData';
 
 const Timeline: React.FC = () => {
-  // Group steps by phase
-  const getStepsForPhase = (phaseSteps: number[]) => {
-    return timelineSteps.filter(step => phaseSteps.includes(step.stepNumber));
-  };
+  // Get all steps except Stage Zero
+  const regularSteps = timelineSteps.filter(step => step.stepNumber !== 0);
+  const stageZeroStep = timelineSteps.find(step => step.stepNumber === 0);
 
-  // Special Stage Zero component with intertwined lightbulb and £ symbol
+  // Special Stage Zero component with bold green £ symbol
   const StageZero = () => {
-    const stageZeroStep = timelineSteps.find(step => step.stepNumber === 0);
     if (!stageZeroStep) return null;
 
     return (
@@ -22,21 +18,18 @@ const Timeline: React.FC = () => {
           <div 
             className="w-16 h-16 rounded-2xl flex items-center justify-center relative overflow-hidden"
             style={{ 
-              background: 'linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #7C3AED 100%)',
-              boxShadow: '0 8px 32px rgba(124, 58, 237, 0.4)'
+              background: 'linear-gradient(135deg, #059669 0%, #10B981 50%, #059669 100%)',
+              boxShadow: '0 8px 32px rgba(5, 150, 105, 0.4)'
             }}
           >
-            {/* Intertwined Lightbulb and £ symbol */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              <Lightbulb className="w-7 h-7 text-yellow-300 absolute" style={{ transform: 'translate(-3px, -2px)' }} />
-              <PoundSterling className="w-6 h-6 text-white absolute" style={{ transform: 'translate(4px, 3px)' }} />
-            </div>
+            {/* Bold green £ symbol */}
+            <span className="text-3xl font-black text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>£</span>
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span 
                 className="px-3 py-1 rounded-full text-xs font-bold text-white"
-                style={{ backgroundColor: PHASE_COLORS.origin }}
+                style={{ backgroundColor: '#059669' }}
               >
                 STAGE 0
               </span>
@@ -49,25 +42,25 @@ const Timeline: React.FC = () => {
         <div 
           className="relative p-6 rounded-2xl border-2 ml-8"
           style={{ 
-            borderColor: PHASE_COLORS.origin,
-            background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, rgba(168, 85, 247, 0.1) 100%)'
+            borderColor: '#059669',
+            background: 'linear-gradient(135deg, rgba(5, 150, 105, 0.05) 0%, rgba(16, 185, 129, 0.1) 100%)'
           }}
         >
           {/* Decorative corner elements */}
           <div 
             className="absolute top-0 left-0 w-16 h-16 rounded-br-3xl opacity-20"
-            style={{ backgroundColor: PHASE_COLORS.origin }}
+            style={{ backgroundColor: '#059669' }}
           />
           <div 
             className="absolute bottom-0 right-0 w-16 h-16 rounded-tl-3xl opacity-20"
-            style={{ backgroundColor: PHASE_COLORS.origin }}
+            style={{ backgroundColor: '#059669' }}
           />
           
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
               <div 
                 className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ backgroundColor: PHASE_COLORS.origin }}
+                style={{ backgroundColor: '#059669' }}
               >
                 <span className="text-white font-bold text-lg">0</span>
               </div>
@@ -79,9 +72,9 @@ const Timeline: React.FC = () => {
           </div>
         </div>
 
-        {/* Connecting line to next phase */}
+        {/* Connecting line to next steps */}
         <div className="flex justify-center my-6">
-          <div className="w-0.5 h-12 bg-gradient-to-b from-purple-500 to-slate-800"></div>
+          <div className="w-0.5 h-12 bg-gradient-to-b from-emerald-500 to-teal-600"></div>
         </div>
       </div>
     );
@@ -92,46 +85,27 @@ const Timeline: React.FC = () => {
       {/* Stage Zero - Special rendering */}
       <StageZero />
 
-      {/* Regular phases (skip the origin phase as it's rendered above) */}
-      {phases.filter(phase => phase.number !== 0).map((phase, phaseIdx) => {
-        const phaseSteps = getStepsForPhase(phase.steps);
-        const isLastPhase = phaseIdx === phases.filter(p => p.number !== 0).length - 1;
-        
-        return (
-          <div key={phase.number} className="mb-8">
-            {/* Phase header */}
-            <PhaseHeader
-              phaseNumber={phase.number}
-              title={phase.title}
-              description={phase.description}
-              color={phase.color}
+      {/* All steps rendered in sequence with same color */}
+      <div className="pl-4 md:pl-8">
+        {regularSteps.map((step, stepIdx) => {
+          const isLastStep = stepIdx === regularSteps.length - 1;
+          
+          return (
+            <TimelineStep
+              key={step.stepNumber}
+              stepNumber={step.stepNumber}
+              title={step.title}
+              description={step.description}
+              subheader={step.subheader}
+              wordCount={step.wordCount}
+              icon={step.icon}
+              isLast={isLastStep}
+              phaseColor={STEP_COLOR}
+              notes={step.notes}
             />
-            
-            {/* Steps in this phase */}
-            <div className="mt-8 pl-4 md:pl-8">
-              {phaseSteps.map((step, stepIdx) => {
-                const isLastStep = isLastPhase && stepIdx === phaseSteps.length - 1;
-                
-                return (
-                  <TimelineStep
-                    key={step.stepNumber}
-                    stepNumber={step.stepNumber}
-                    title={step.title}
-                    description={step.description}
-                    subheader={step.subheader}
-                    wordCount={step.wordCount}
-                    icon={step.icon}
-                    isLast={isLastStep}
-                    phaseColor={PHASE_COLORS[step.phase]}
-                    notes={step.notes}
-                  />
-                );
-
-              })}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

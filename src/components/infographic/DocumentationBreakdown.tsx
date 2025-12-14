@@ -6,7 +6,7 @@ const DocumentationBreakdown: React.FC = () => {
     {
       icon: FileText,
       name: 'Invention Disclosure Form',
-      wordRange: '5,500–7,000',
+      wordRange: '8,000 words',
       color: '#1A365D',
       percentage: 25
     },
@@ -20,21 +20,21 @@ const DocumentationBreakdown: React.FC = () => {
     {
       icon: BookOpen,
       name: 'Know-How Summary',
-      wordRange: '1,500–2,500',
+      wordRange: '3 pages',
       color: '#4F46E5',
       percentage: 8
     },
     {
       icon: Shield,
       name: 'Trade-Secret Layer',
-      wordRange: '3,000–5,000',
+      wordRange: '2,000 words',
       color: '#7C3AED',
       percentage: 15
     },
     {
       icon: Briefcase,
       name: 'Business Case',
-      wordRange: '5,000–7,000',
+      wordRange: '4,000 words + tables',
       color: '#059669',
       percentage: 25
     },
@@ -53,6 +53,7 @@ const DocumentationBreakdown: React.FC = () => {
       percentage: 5
     }
   ];
+
 
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">

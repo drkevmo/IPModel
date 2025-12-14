@@ -11,12 +11,12 @@ const KeyRealities: React.FC = () => {
     {
       icon: MessageSquareOff,
       title: 'No Exemplars or Quality Indicators',
-      description: 'No templates, examples, or benchmarks provided at any stage to guide document structure, content depth, or format expectations.'
+      description: 'No templates, examples, or benchmarks were available to guide document structure, content depth, or format expectations.'
     },
     {
       icon: ClipboardList,
       title: 'Document Production Over Formative Feedback',
-      description: 'The process is structured around sequential document submission, with each stage informing the next leading to potential for delay and focus on process.'
+      description: 'The process is structured around sequential document submission, with each stage informing the next, which can extend timelines and increase emphasis on process.'
     },
     {
       icon: Activity,
@@ -26,7 +26,7 @@ const KeyRealities: React.FC = () => {
     {
       icon: Building2,
       title: 'Complex Process in a Constrained Institutional Environment',
-      description: 'The documentation process has required extensive legal-style analysis without templates, exemplars, or clear quality indicators. The process involves several stakeholders, each responsible for different components, which naturally extends timelines. With current institutional constraints and heightened sensitivity around resource allocation, progressing innovation at pace can be challenging, and the cumulative workload impact is felt alongside core responsibilities.'
+      description: 'The process involves several stakeholders, each responsible for different components, which naturally extends timelines. Recent institutional changes and a greater focus on resource use have made it harder to progress new initiatives at pace, increasing the workload alongside core responsibilities.'
     }
   ];
 
@@ -39,13 +39,18 @@ const KeyRealities: React.FC = () => {
             <Info className="w-6 h-6 text-teal-400" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-white">Observations</h2>
+            <h2 className="text-2xl font-bold text-white">Challenges</h2>
           </div>
         </div>
       </div>
       
       {/* Realities list */}
       <div className="p-8 space-y-6">
+        {/* Framing sentence */}
+        <p className="text-slate-300 leading-relaxed pb-2 border-b border-slate-700">
+          The following observations reflect structural characteristics of the process rather than the actions of any individual.
+        </p>
+        
         {realities.map((reality, idx) => (
           <div 
             key={idx}
@@ -61,17 +66,9 @@ const KeyRealities: React.FC = () => {
           </div>
         ))}
       </div>
-      
-      {/* Footer note */}
-      <div className="px-8 pb-8">
-        <div className="p-4 rounded-lg bg-slate-700/30 border border-slate-600/30">
-          <p className="text-slate-400 text-sm text-center italic">
-            These observations reflect structural process characteristics and are presented without attribution to individuals.
-          </p>
-        </div>
-      </div>
     </div>
   );
 };
 
 export default KeyRealities;
+

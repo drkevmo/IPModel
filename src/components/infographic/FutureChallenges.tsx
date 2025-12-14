@@ -7,12 +7,25 @@ import {
   Gauge, 
   Shield,
   AlertTriangle,
-  AlertOctagon,
-  Eye
+  Eye,
+  Briefcase,
+  Building2
 } from 'lucide-react';
 
 const FutureChallenges: React.FC = () => {
   const challenges = [
+    {
+      icon: Briefcase,
+      title: 'Business Readiness',
+      description: 'The games are in demand and in circulation. We are about to share this with our alumni network because we have a seasonal opportunity to do so, but the IP is not yet protected and it is unclear how we sell them if we generate alumni interest and have no agreement in place about licensing.'
+    },
+    {
+      icon: Building2,
+      title: 'Institutional Environment',
+      description: 'Recent changes have slowed the pace at which new initiatives can move forward. Combined with existing responsibilities, this has made the overall workload harder to manage alongside core responsibilities.'
+    },
+
+
     {
       icon: Server,
       title: 'Technology Migration Requirements',
@@ -47,12 +60,12 @@ const FutureChallenges: React.FC = () => {
     {
       icon: Eye,
       title: 'Loss of Perspective',
-      description: 'As documentation moves through multiple specialist reviewers, each focuses on their area of responsibility, which can naturally make it harder to maintain a unified view of the full material. Several games already work, with new builds being developed rapidly as needed. Here is what the methodology can achieve:',
+      description: 'As documentation moves through multiple specialist reviewers, each focuses on their area of responsibility, which can naturally make it harder to maintain a unified view of the full material. Several games already work, with new builds being developed rapidly as needed. Here is what the methodology can achieve - a game built last weekend, while the business case was under review:',
       quote: {
         author: 'Dr Aktas',
         text: '"Wow - this is so impressive! And you built it all over the weekend! I love the theme you chose! So appropriate for an educational institution in the UK! I loved how you translated the [game mechanics] Overall, the game is amazing; I can arrange for a few PhD students to test it in January and then we can deploy it in exec ed in the first opportunity. Fascinating! Thank you so much! Look forward!"'
       },
-      additionalNote: 'User-facing feedback has been very positive, while internal review focuses on compliance, governance, and completeness, and involves different stakeholders who lack context which naturally leads to requests for additional detail. There should be a licensing agreement if this is used with 3rd parties because this is very valuable. However I feel we have lost sight of the actual purpose of this process and every stage is about creating more paper.'
+      additionalNote: 'User-facing feedback has been very positive, while internal review focuses on compliance, governance, and completeness, and involves different stakeholders who lack context which naturally leads to requests for additional detail. There should be a licensing agreement if this is used with 3rd parties because this is very valuable. As the process has progressed, there is a risk that the focus shifts toward documentation completeness rather than the original commercial and pedagogical objectives.'
     }
 
   ];
@@ -60,25 +73,7 @@ const FutureChallenges: React.FC = () => {
   return (
     <div className="space-y-6">
 
-      {/* Urgency Warning Section */}
-      <div className="bg-red-50 border-2 border-red-400 rounded-2xl shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-red-700 to-red-600 px-8 py-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center animate-pulse">
-              <AlertOctagon className="w-6 h-6 text-white" />
-            </div>
-            <h2 className="text-xl font-bold text-white">Urgency</h2>
-          </div>
-        </div>
-        <div className="p-6">
-          <p className="text-red-800 font-medium leading-relaxed text-lg">
-            The games are in demand and in circulation. We are about to share this with our alumni network because we have a seasonal opportunity to do so, but the IP is not yet protected and it is unclear how we sell them if we generate alumni interest and have no agreement in place about licensing.
-          </p>
-        </div>
-      </div>
-
-
-      {/* Anticipated Structural Challenges */}
+      {/* Current Challenges */}
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-6">
@@ -87,10 +82,7 @@ const FutureChallenges: React.FC = () => {
               <AlertTriangle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-white">Anticipated Structural Challenges</h2>
-              <p className="text-white/80 text-sm mt-1">
-                Potential difficulties reflecting common institutional constraints
-              </p>
+              <h2 className="text-2xl font-bold text-white">Current Challenges</h2>
             </div>
           </div>
         </div>
@@ -133,13 +125,6 @@ const FutureChallenges: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-          
-          {/* Disclaimer */}
-          <div className="mt-8 p-4 rounded-lg bg-gray-100 border border-gray-200">
-            <p className="text-gray-500 text-sm text-center">
-              These challenges reflect common institutional constraints rather than the actions of any individual.
-            </p>
           </div>
         </div>
       </div>
